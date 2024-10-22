@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="{% static 'auth.css'%}">
+    
+</head>
+<body>
+    <div class="container">
+        <form class="signin-form" action="{% url 'signup' %}" method="post">
+            {% csrf_token %}
+            <h2>Sign up</h2>
+            <div class="input-group">
+                <input type="text" name="frist_name" id="username" required>
+                <label for="username">First name</label>
+            </div>
+            <div class="input-group">
+                <input type="text" name="last_name" id="username" required>
+                <label for="username">Last name</label>
+            </div>
+            <div class="input-group">
+                <input type="text" name="username" id="username" required>
+                <label for="username">Username</label>
+            </div>
+            <div class="input-group">
+                <input type="text" name="email" id="username" required>
+                <label for="username">Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" id="password" required>
+                <label for="password">Password</label>
+            </div>
+            <div class="input-group">
+                <input type="password"name="confirm_password" id="password" required>
+                <label for="password">Confirm Password</label>
+            </div>
+            <button type="submit">Sign up</button>
+
+        </form>
+    </div>
+</body>
+</html>
